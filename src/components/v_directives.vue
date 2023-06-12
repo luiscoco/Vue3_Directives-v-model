@@ -16,7 +16,7 @@
   </ul>
 
   <img v-bind:src="imageSrc" alt="Vue.js Logo" />
-
+  <p>{{ counter }}</p>
   <button v-on:click="incrementCounter">Click me</button>
 </template>
 
@@ -28,6 +28,7 @@ interface Item {
   id: number;
   name: string;
 }
+let counter = ref(0);
 
 const items = ref<Item[]>([
   { id: 1, name: "Item 1" },
@@ -36,6 +37,6 @@ const items = ref<Item[]>([
 ]);
 const imageSrc = ref("https://www.gstatic.com/webp/gallery/2.jpg");
 const incrementCounter = () => {
-  // Logic to increment the counter
+  counter.value = counter.value + 1;
 };
 </script>
